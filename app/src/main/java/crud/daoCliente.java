@@ -36,6 +36,24 @@ public class daoCliente extends SQLiteOpenHelper {
         // eliminar y recrear tablas
     }
 
+    public boolean editar(cliente c) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("Nombre", c.getNombre());
+        cv.put("PrimerAp", c.getPrimerAp());
+        cv.put("SegundoAp", c.getSegundoAp());
+        cv.put("Sexo", c.getSexo());
+        cv.put("FechaNac", c.getFechaNac());
+        cv.put("Correo", c.getCorreo());
+        cv.put("NumTel", c.getNumTel());
+
+        int filasAfectadas = db.update("Cliente",cv,"idCliente = ?",new String[]{c.getIdCliente()});
+
+        return filasAfectadas > 0; //true si actualizó algo
+    }
+
+
     public boolean insertarCliente(cliente c) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -79,26 +97,47 @@ public class daoCliente extends SQLiteOpenHelper {
         return lista;
     }
 
-    public cliente verUno(String id) {
+    public ArrayList<cliente> buscarPorNombreCompleto(String texto) {
+        ArrayList<cliente> lista = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Cliente WHERE idCliente = ?", new String[]{id});
+
+        // Texto para LIKE
+        String filtro = "%" + texto + "%";
+
+        // CONCAT permite buscar el nombre completo junto
+        Cursor c = db.rawQuery(
+                "SELECT * FROM Cliente WHERE " +
+                        "Nombre || ' ' || PrimerAp || ' ' || SegundoAp LIKE ?",//asi se concatena pa realizar la consulta de nombre completo
+                new String[]{ filtro }
+        );
 
         if (c.moveToFirst()) {
-            cliente cli = new cliente(
-                    c.getString(0),
-                    c.getString(1),
-                    c.getString(2),
-                    c.getString(3),
-                    c.getString(4),
-                    c.getString(5),
-                    c.getString(6),
-                    c.getString(7)
-            );
-            c.close();
-            return cli;
+            do {
+                cliente cli = new cliente(
+                        c.getString(0),
+                        c.getString(1),
+                        c.getString(2),
+                        c.getString(3),
+                        c.getString(4),
+                        c.getString(5),
+                        c.getString(6),
+                        c.getString(7)
+                );
+                lista.add(cli);
+            } while (c.moveToNext());
         }
 
         c.close();
-        return null;
+        return lista;
     }
+
+
+    public boolean eliminar(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int filasAfectadas = db.delete("Cliente", "idCliente=?", new String[]{id});
+        return filasAfectadas > 0;
+    }
+
+
+
 }

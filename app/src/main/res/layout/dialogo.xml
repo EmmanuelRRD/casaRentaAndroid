@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <EditText
         android:id="@+id/caja_id"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:inputType="text"
-        android:hint="Identificador"/>
+        android:layout_marginTop="8dp"
+        android:hint="Identificador"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/caja_nombre"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:inputType="text"
-        android:hint="Nombre"/>
+        android:layout_marginTop="8dp"
+        android:hint="Nombre"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/caja_pa"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:inputType="text"
-        android:hint="Primer Apellido"/>
+        android:layout_marginTop="8dp"
+        android:hint="Primer apellido"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/caja_sa"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:hint="Segundo apellido"
         android:inputType="text" />
 
@@ -37,12 +42,14 @@
         android:id="@+id/spinner_sexo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:entries="@array/hom"/>
+        android:layout_marginTop="8dp"
+        android:entries="@array/hom" />
 
     <EditText
         android:id="@+id/fecha_nac"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:hint="Fecha Nacimiento"
         android:inputType="text" />
 
@@ -50,34 +57,36 @@
         android:id="@+id/caja_correo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Correo Electronico"
-        android:ems="10"
+        android:layout_marginTop="8dp"
+        android:hint="Correo electrónico"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/caja_tel"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Numero de telefono"
-        android:ems="10"
+        android:layout_marginTop="8dp"
+        android:hint="Número de teléfono"
         android:inputType="number" />
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="183dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#FFB300"
         android:text="AGREGAR"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_cancelar"
-        android:layout_width="183dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FFB300"
         android:text="CANCELAR"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
