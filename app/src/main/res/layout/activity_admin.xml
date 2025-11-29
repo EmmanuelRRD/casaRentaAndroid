@@ -9,16 +9,37 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="108dp"
         android:text="Admin"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <SearchView
+        android:layout_width="277dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_agregar"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="412dp"
-        android:layout_height="659dp"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="214dp" />
+        android:id="@+id/lista_recycler"
+        android:layout_width="403dp"
+        android:layout_height="460dp"
+        android:layout_marginTop="134dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/btn_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="225dp"
+        android:contentDescription="Boton para agregar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/agregar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

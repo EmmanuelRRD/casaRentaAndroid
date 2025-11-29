@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre" />
+
+            <TextView
+                android:id="@+id/text_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coreo" />
+
+
+            <TextView
+                android:id="@+id/text_pa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Primer Apellido" />
+
+
+            <TextView
+                android:id="@+id/text_sa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Segundo Apellido" />
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:layout_width="183dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#FFB300"
+        android:text="CANCELAR"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+
+</LinearLayout>

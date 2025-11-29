@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">CasaRenta</string>
+
+    <string-array name="tipo_usuario_opciones">
+        <item>Administrador</item>
+        <item>Cliente</item>
+        <item>Empleado</item>
+    </string-array>
+
+    <string-array name="hom">
+        <item>Hombre</item>
+        <item>Mujer</item>
+
+    </string-array>
+
 </resources>
