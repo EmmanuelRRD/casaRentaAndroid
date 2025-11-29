@@ -39,6 +39,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         }
     }
 
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
